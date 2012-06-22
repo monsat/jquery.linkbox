@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta chaset="utf-8">
+	<title>Link Box Sample</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../jquery.linkbox.js"></script>
+	<style>
+		.linkbox {
+			background-color: #eee;
+		}
+		#wrapper {
+			background-color: cyan;
+			margin: 100px auto;
+overflow: hidden;
+			padding: 1em;
+			width: 844px;
+		}
+		.sample {
+			border: 1px solid #ccc;
+			float: left;
+			margin: 10px;
+			padding: 10px;
+			width: 380px;
+		}
+		.dummy {
+			color: #999;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h1>Link Box Sample</h1>
+		<div id="wrapper">
+			<div id="sample1" data-click="linkbox" class="sample">
+				<h2>Sample #1</h2>
+				<p>
+					<a href="https://github.com/monsat/jquery.linkbox" target="github">This link</a> is clickable on the box.
+				</p>
+				<p class="dummy">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit libero eu elit porta porta. Duis ut magna in lacus adipiscing auctor quis id lectus. Proin lorem erat, lacinia et lobortis eget, hendrerit et est. Mauris vitae ornare mi. Quisque vel nibh facilisis nulla ornare congue id sed ante. Praesent vel justo vel lorem sollicitudin ultricies nec quis ante.
+				</p>
+				<p style="text-align: right;">
+					<a href="https://github.com/monsat" target="github">This link</a> is normal link.
+				</p>
+			</div>
+			<div id="sample2" data-click="linkbox" class="sample">
+				<h2>Sample #2</h2>
+				<p>
+					<a href="https://github.com/monsat/jquery.linkbox" target="github">This link</a> is normal link.
+				</p>
+				<p class="dummy">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit libero eu elit porta porta. Duis ut magna in lacus adipiscing auctor quis id lectus. Proin lorem erat, lacinia et lobortis eget, hendrerit et est. Mauris vitae ornare mi. Quisque vel nibh facilisis nulla ornare congue id sed ante. Praesent vel justo vel lorem sollicitudin ultricies nec quis ante.
+				</p>
+				<p style="text-align: right;">
+					<a href="https://github.com/monsat" target="github" data-linkbox="target">This link (with data-link="target" attribute)</a> is clickable on the box.
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
