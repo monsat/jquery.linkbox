@@ -54,7 +54,7 @@
 			var data = $this.data('linkbox');
 			var options = typeof option == 'object' && option;
 			if (!data) {
-				$this.data('linkbox', (data = new Linkbox(this, options)));
+				$this.data('linkbox', (data = new Linkbox(this, options))).css('cursor', 'pointer');
 			}
 			if (typeof option == 'string') {
 				data[option]();
