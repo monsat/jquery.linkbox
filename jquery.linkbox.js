@@ -31,9 +31,7 @@
 		}
 		, bindEvents: function () {
 			var _this = this;
-			var ua = navigator.userAgent,
-				event = (ua.match(/iPad/i) || ua.match(/iPod/i) || ua.match(/iPhone/i)) ? "touchstart" : "click";
-			this.$element.on(event + '.linkbox.data-api', function (e) {
+			this.$element.on('click.linkbox.data-api', function (e) {
 				e.preventDefault();
 				_this.click(e);
 			});
