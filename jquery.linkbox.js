@@ -12,15 +12,7 @@
 			e.stopPropagation();
 		});
 		// bind
-		var _this = this;
-		this.$element.on('click.linkbox.data-api', function (e) {
-			e.preventDefault();
-			_this.click(e);
-		});
-		this.$element.on('mouseleave.linkbox.data-api', function (e) {
-			e.preventDefault();
-			_this.mouseLeave(e);
-		});
+		this.bindEvents();
 		this.mouseEnter();
 	}
 	Linkbox.prototype = {
@@ -36,6 +28,21 @@
 		, mouseLeave: function (e) {
 			this.$element.removeClass(this.options.toggleClass);
 			return this;
+		}
+		, bindEvents: function () {
+			var _this = this;
+			this.$element.on('click.linkbox.data-api', function (e) {
+				e.preventDefault();
+				_this.click(e);
+			});
+			this.$element.on('mouseenter.linkbox.data-api', function (e) {
+				e.preventDefault();
+				_this.mouseEnter(e);
+			});
+			this.$element.on('mouseleave.linkbox.data-api', function (e) {
+				e.preventDefault();
+				_this.mouseLeave(e);
+			});
 		}
 	}
 
@@ -67,6 +74,11 @@
 		$('body').on('mouseenter.linkbox.data-api', '[data-click="linkbox"]', function (e) {
 			var $this = $(this);
 			var option = $this.data('linkbox') ? 'mouseEnter' : $this.data('linkbox');
+			e.preventDefault();
+			$this.linkbox(option);
+		}).on('click.linkbox.data-api', '[data-click="linkbox"]', function (e) {
+			var $this = $(this);
+			var option = $this.data('linkbox') ? 'click' : $this.data('linkbox');
 			e.preventDefault();
 			$this.linkbox(option);
 		});
