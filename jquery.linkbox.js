@@ -18,7 +18,11 @@
 	Linkbox.prototype = {
 		constructor: Linkbox
 		, click: function (e) {
-			window.location = this.$target.attr('href');
+			if (this.options.windowOpen && (_target = this.$target.attr('target'))) {
+				window.open(this.$target.attr('href'), _target);
+			} else {
+				window.location = this.$target.attr('href');
+			}
 			return this;
 		}
 		, mouseEnter: function (e) {
@@ -63,7 +67,8 @@
 	}
 	// default options
 	$.fn.linkbox.defaults = {
-		toggleClass: 'linkbox'
+		toggleClass: 'linkbox',
+		windowOpen: false
 	};
 	// construct
 	$.fn.linkbox.Constructor = Linkbox;
